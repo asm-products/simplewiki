@@ -1,0 +1,27 @@
+
+<div id="sidebar">
+  <% if @page && @page.sidebar %>
+    <%= @page.sidebar.formatted_data.html_safe %>
+  <% else %>
+    <h3>All pages</h3>
+    <ul>
+    <% @wiki.pages.sort_by(&:title).each do |page| %>    
+      <li><a href="/pages/<%=page.escaped_url_path%>"><%= page.title %></a></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
+<div id="content">
+  <% if @page %>
+    <h1 class="title"><%= @page.title %></h1>
+    <%= @page.formatted_data.html_safe %>
+  <% else %>
+    Empty page
+  <% end %>
+
+  <div id="footer">
+    <% if @page && @page.footer %>
+      <%= @page.footer.formatted_data.html_safe %>    
+    <% end %>  
+  </div>
+</div>

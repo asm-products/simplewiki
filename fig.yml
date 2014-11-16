@@ -1,0 +1,21 @@
+mysql:
+  image: mysql
+  ports:
+    - "3306"
+  environment:
+    - MYSQL_DATABASE=wiki_development
+    - MYSQL_USER=simplewiki
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_PASSWORD=simplewiki
+
+web:
+  build: .
+  command: bundle exec rails s unicorn
+  environment:
+    - RAILS_ENV=development
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - "3000:3000"
+  links:
+    - mysql

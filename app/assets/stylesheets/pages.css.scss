@@ -1,0 +1,68 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "typeplate";
+
+#sidebar {
+    width: 300px;
+    margin: 20px;
+    padding-top: 50px;
+    float: left;
+
+    a {
+        color: #4183c4;
+    }
+
+    font-size: 80%;
+}
+
+#content {
+    width: 750px;
+    margin: 20px;    
+    float: left;
+
+    a {
+        color: #4183c4;
+    }
+
+    img {
+        max-width: 750px;
+    }
+
+    h1.title {
+        margin-bottom: 40px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    #footer {
+        margin-top: 40px;
+        padding-top: 10px;
+        border-top: 1px solid #eeeeee;  
+
+        font-size: 80%; 
+    }
+}
+
+#content table {
+    border-collapse: colapse;
+    border-spacing: 0;
+
+    th {
+        padding: 5px;
+        valign: top;
+        border-bottom: 2px solid #cccccc;
+        margin:0;
+        vertical-align: top;
+    }
+
+    tbody tr:first-child td {
+        padding-top: 20px;
+    }
+
+    td {
+        vertical-align: top;
+        padding: 5px;
+    }
+}
