@@ -2,7 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "typeplate";
+a {
+    color: #4183c4;
+}
+
+#demo-bar {
+    height: 50px;
+    background-color: #f1f9fb;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+    }
+
+    h3 {
+        padding-top: 15px
+    }
+}
+
+body {
+    padding-top: 50px;
+}
 
 #sidebar {
     width: 300px;
@@ -21,10 +46,6 @@
     width: 750px;
     margin: 20px;    
     float: left;
-
-    a {
-        color: #4183c4;
-    }
 
     img {
         max-width: 750px;
