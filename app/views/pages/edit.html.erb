@@ -1,0 +1,15 @@
+<div id="editor">
+  <%= form_tag("/edit/#{@page.escaped_url_path}", method: "post") do %>
+    <input name="title" value="<%=@page.title%>" class="typl8-gamma" />
+    <br />
+    <textarea name="data" class="typl8-zeta"><%=@page.raw_data%></textarea>
+
+    <input type="submit" value="Save" class="btn-green"/>
+    <a href="/pages/<%=@page.escaped_url_path%>" class="cancel">Cancel</a>
+  <% end %>
+</div>
+
+<script>
+  var editor = new Editor();
+  editor.render();
+</script>

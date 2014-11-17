@@ -1,7 +1,3 @@
-<div id="demo-bar">
-  <h3>You are viewing <a href="https://github.com/snowplow/snowplow/wiki">https://github.com/snowplow/snowplow/wiki</a> on SimpleWiki rendering engine.</h3>
-</div>
-
 <div id="sidebar">
   <% if @page && @page.sidebar %>
     <%= @page.sidebar.formatted_data.html_safe %>
@@ -21,6 +17,9 @@
   <% else %>
     Empty page
   <% end %>
+  <div id="controls">
+    <a href="/edit/<%=@page.escaped_url_path%>">Edit</a>
+  </div>
 
   <div id="footer">
     <% if @page && @page.footer %>

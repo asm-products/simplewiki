@@ -64,6 +64,13 @@ body {
 
         font-size: 80%; 
     }
+
+    #controls {
+        position: absolute;
+        left: 1080px;
+        top: 85px;
+        text-align: right;
+    }    
 }
 
 #content table {
@@ -85,5 +92,37 @@ body {
     td {
         vertical-align: top;
         padding: 5px;
+    }
+}
+
+#editor {    
+    input[name=title] {
+        padding: 5px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    textarea[name=data] {
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        min-width: 100%;
+    }
+
+    input[type=submit] {
+        margin-top: -20px;
+    }
+
+    a.cancel {
+        margin-left: 20px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .editor-preview {
+        background-color: #fff;
     }
 }

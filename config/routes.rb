@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#show'
+
+  get  '/edit/(*url)', to: 'pages#edit'
+  post '/edit/(*url)', to: 'pages#update'
+
   get '/pages/(*url)(.:format)', to: 'pages#show'
+  
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
