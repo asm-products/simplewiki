@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_page, :only => [:show]  
+  before_action :set_page, :only => [:show,:edit,:update]  
 
   def show
     if @file
@@ -12,6 +12,27 @@ class PagesController < ApplicationController
       redirect_to "/pages/#{@page.escaped_url_path}"
       return
     end
+  end
+
+  def edit
+  end
+
+  def update
+    commit = { 
+      :message => 'Some change',
+      :name => 'Leonid Bugaev',
+      :email => 'leonsbox@gmail.com' 
+    }
+
+    if @page
+      @wiki.update_page(@page, params[:title], @page.format, params[:data], commit)
+    else
+      @wiki.write_page(params[:title], :markdown, params[:data], commit)
+    end
+
+    @page = @wiki.page(params[:title])
+
+    redirect_to "/pages/#{@page.escaped_url_path}"
   end
 
   private
