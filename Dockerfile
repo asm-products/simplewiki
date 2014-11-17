@@ -14,4 +14,4 @@ COPY . /usr/src/app
 
 EXPOSE 3000
 
-CMD rails server
+CMD rails server unicorn
