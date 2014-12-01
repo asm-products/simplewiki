@@ -2,6 +2,20 @@
 <html>
 <head>
   <title><%=@page.try(:title)%></title>
+
+  <script type="text/javascript">
+    paceOptions = {
+      // Disable the 'elements' source
+      elements: true,
+
+      // Only show the progress on regular and ajax-y page navigation,
+      // not every request
+      restartOnPushState: false,
+
+      restartOnRequestAfter: false
+    }
+  </script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
